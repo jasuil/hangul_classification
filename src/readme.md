@@ -1,4 +1,4 @@
-#folder structure   
+# folder structure   
 text: test data, trained file, word data
 
 extract-data.py: module, text data to vectorized data
