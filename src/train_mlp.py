@@ -50,7 +50,7 @@ score = model.evaluate(x_test, y_test, verbose=1)
 print("정답률=", score[1], 'loss=', score[0])
 
 # 가중치데이터 저장하기 --- (*9)
-model.save_weights('./text/genre-model.hdf5')
+model.save_weights('../text/genre-model.hdf5')
 
 # 학습 상태를 그래프로 그리기 --- (*10)
 plt.plot(hist.history['acc'])

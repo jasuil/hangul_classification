@@ -17,8 +17,8 @@ text3 = """
 """
 
 # TF-IDF 사전 읽어 들이기 --- (*2)
-tfidf.load_dic("/app/text/genre-tdidf.dic")
-
+#tfidf.load_dic("/app/text/genre-tdidf.dic") heroku
+tfidf.load_dic("../text/genre-tdidf.dic") #local
 
 # 텍스트 지정해서 판별하기 --- (*4)
 def check_genre(text):
@@ -27,7 +27,8 @@ def check_genre(text):
     # TF-IDF 벡터로 변환하기 -- (*5)
     data = tfidf.calc_text(text)
     # MLP로 예측하기 --- (*6)
-    model = load('/app/text/text-sklearn.model')
+    #model = load('/app/text/text-sklearn.model') heroku
+    model = load('../text/text-sklearn.model') #local
     pre = model.predict(np.array([data]))[0]
     n = pre.argmax()
     print(LABELS[pre], "(", pre, ")")
