@@ -15,7 +15,7 @@ print("http://localhost:" + str(TM_PORT_NO))
 # 루트에 접근할 경우 --- (*2)
 @app.route('/', methods=['GET'])
 def index():
-  with open("index.html", "rb") as f:
+  with open("src/index.html", "rb") as f:
     return f.read()
 
 
