@@ -27,7 +27,7 @@ def check_genre(text):
     # TF-IDF 벡터로 변환하기 -- (*5)
     data = tfidf.calc_text(text)
     # MLP로 예측하기 --- (*6)
-    model = load('/text/text-sklearn.model')
+    model = load('../text/text-sklearn.model')
     pre = model.predict(np.array([data]))[0]
     n = pre.argmax()
     print(LABELS[pre], "(", pre, ")")

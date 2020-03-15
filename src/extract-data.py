@@ -15,9 +15,9 @@ def read_files(path, label):
         y.append(label)
 
 # 기사를 넣은 디렉터리 읽어 들이기 --- ( ※ 2)
-read_files('text/100', 0) # politics
-read_files('text/101', 1) # economy
-read_files('text/103', 2) # weather
+read_files('../text/100', 0) # politics
+read_files('../text/101', 1) # economy
+read_files('../text/103', 2) # weather
 
 
 
@@ -25,6 +25,6 @@ read_files('text/103', 2) # weather
 x = tfidf.calc_files()
 
 # 저장하기 --- (*4)
-pickle.dump([y, x], open('text/genre.pickle', 'wb'))
+pickle.dump([y, x], open('../text/genre.pickle', 'wb'))
 tfidf.save_dic('text/genre-tdidf.dic')
 print('ok')

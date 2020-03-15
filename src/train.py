@@ -6,7 +6,7 @@ import numpy as np
 from joblib import dump, load
 
 # TF-IDF 데이터베이스 읽어 들이기 --- (*1)
-data = pickle.load(open("text/genre.pickle", "rb"))
+data = pickle.load(open("../text/genre.pickle", "rb"))
 y = data[0] # 레이블
 x = data[1] # TF-IDF
 
@@ -28,4 +28,4 @@ print("정답률=", acc)
 print("y set\n", rep)
 
 
-dump(model, 'text/text-sklearn.model')
+dump(model, '../text/text-sklearn.model')

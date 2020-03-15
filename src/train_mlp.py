@@ -13,7 +13,7 @@ import h5py
 nb_classes = 4
 
 # 데이터베이스 읽어 들이기 --- (*2)
-data = pickle.load(open("text/genre.pickle", "rb"))
+data = pickle.load(open("../text/genre.pickle", "rb"))
 y = data[0] # 레이블
 x = data[1] # TF-IDF
 # 레이블 데이터를 One-hot 형식으로 변환하기 --- (*3)
