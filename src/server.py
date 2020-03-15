@@ -1,7 +1,9 @@
 import json
+
 import flask
 from flask import request
-from src import test as my_text
+
+from src import test_text as my_text
 
 # 포트 번호 --- (*1)
 TM_PORT_NO = 8085
