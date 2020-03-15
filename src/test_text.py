@@ -17,7 +17,7 @@ text3 = """
 """
 
 # TF-IDF 사전 읽어 들이기 --- (*2)
-tfidf.load_dic("/text/genre-tdidf.dic")
+tfidf.load_dic("/app/text/genre-tdidf.dic")
 
 
 # 텍스트 지정해서 판별하기 --- (*4)
