@@ -1,4 +1,4 @@
-# 한글 문서분류(simple hagul classification)
+# 한글 문서분류(simple hangul classification)
 
 dependencies
 ```
