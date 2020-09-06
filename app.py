@@ -26,9 +26,12 @@ def api():
   q = request.args.get('q', '')
   if q == '':
     return '{"label": "내용을 입력해주세요", "per":0}'
-  print("q=", q)
+  #print("q=", q)
   # 텍스트 카테고리 판별하기 --- (*4)
-  label, per, no = my_text.check_genre(q)
+  try:
+    label, per, no = my_text.check_genre(q)
+  except Exception as inst:
+    label, per, no = '판별불가 ㅜㅠ', -1, 0
   # 결과를 JSON으로 출력하기
   return json.dumps({
     "label": label,
