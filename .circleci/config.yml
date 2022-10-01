@@ -1,18 +1,17 @@
 version: 2.1
 
 orbs:
-  python: circleci/python@2.1.1
+  python: circleci/python@0.2.1
 
 jobs:
   build-and-test:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache
       - python/install-deps
+      - python/load-cache
       - python/save-cache
-      - run: |
-          python -m pip install --upgrade pip
+      - run:
           command: ./manage.py test
           name: Test
 
