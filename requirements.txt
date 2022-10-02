@@ -5,3 +5,4 @@ itsdangerous==1.1.0
 joblib==1.2.0
 konlpy==0.5.2
 scikit-learn==1.1.2
+pytest==7.1.3
