@@ -6,7 +6,7 @@ konlpy
 sklearn
 numpy
 flask
-keras
+keras 2
 ```
 
 you can convert sklearn to keras
