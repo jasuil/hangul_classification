@@ -11,7 +11,7 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          command: pwd#python -m unittest test/test_example.py
+          command: pwd
           name: Test
 
 workflows:
