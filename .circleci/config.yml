@@ -11,7 +11,7 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          command: ./manage.py test
+          command: ./python -m unittest -v test/test_examply.py
           name: Test
 
 workflows:
