@@ -11,6 +11,19 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
+          name: Build Verify
+          command: python -m
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+  test:
+    executor: python/default
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
           name: Run tests
           command: python -m unittest
       - persist_to_workspace:
@@ -18,7 +31,8 @@ jobs:
           paths:
             - .
 
+
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build
