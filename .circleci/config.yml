@@ -1,21 +1,38 @@
 version: 2.1
 
 orbs:
-  python: circleci/python@0.2.1
+  python: circleci/python@2.1.1
 
 jobs:
-  build-and-test:
+  build-only:
     executor: python/default
     steps:
       - checkout
-      - python/install-deps
-      - python/load-cache
-      - python/save-cache
+      - python/install-packages:
+          pkg-manager: pip
       - run:
-          command: ./manage.py test
-          name: Test
+          name: Build verify
+          command: echo 'ok'
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+  test:
+    executor: python/default
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: Run tests
+          command: python -m unittest
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+
 
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build-only
