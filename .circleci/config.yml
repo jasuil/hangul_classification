@@ -12,7 +12,7 @@ jobs:
           pkg-manager: pip
       - run:
           name: Build verify
-          command: python -c print('ok')
+          command: echo 'ok'
       - persist_to_workspace:
           root: ~/project
           paths:
