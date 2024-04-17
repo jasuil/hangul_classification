@@ -4,14 +4,14 @@ orbs:
   python: circleci/python@2.1.1
 
 jobs:
-  build:
+  build-only:
     executor: python/default
     steps:
       - checkout
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: Build Verify
+          name: Build verify
           command: python -m
       - persist_to_workspace:
           root: ~/project
@@ -35,4 +35,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - build
+      - build-only
